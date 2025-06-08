@@ -248,6 +248,22 @@ Znamy tę całkę z książki Nahina \cite{nahin15}.
 Wskazówka: podstawić $x = \cos 2 \varphi$.
 % SOLUTION
 
+% https://math.stackexchange.com/questions/170331/why-is-int-0-infty-frac-ln-x1x2-mathrmdx-0
+\begin{problem_with_solution}
+    \label{stack_170331}%
+    \begin{equation}
+        \int_0^\infty \frac{\log x}{1 + x^2} \,\mathrm{d}x.
+    \end{equation}
+\end{problem_with_solution}
+
+% SOLUTION
+\textbf{Problem \ref{stack_170331}} -- podstawić $\theta = \arctan x$, wtedy
+\begin{equation}
+    \int_0^{\pi/2} \log \tan \theta \,\mathrm{d}\theta = \int_0^{\pi/2} \log \sin \theta \,\mathrm{d}\theta - \int_0^{\pi/2} \log \cos \theta \,\mathrm{d}\theta = 0.
+\end{equation}
+% SOLUTION
+
+
 \subsection{Podstawienia Eulera}
 
 TODO: Banaś Wędrychowicz, 12.71 - 12.87
