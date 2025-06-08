@@ -1,0 +1,23 @@
+%
+
+% https://math.stackexchange.com/questions/110457/closed-form-for-int-0-infty-fracxn1-xmdx
+\begin{problem_with_solution}[pytanie 110457]
+    \label{stack_110457}%
+    Niech $0 < n < m$, wtedy
+    \begin{equation}
+        \int_0^\infty \frac{n x^{n-1}}{1 + x^m} \,\mathrm{d} x = \frac {\pi n} m \operatorname{csc} \frac {\pi n}{m}.
+    \end{equation}
+\end{problem_with_solution}
+
+% SOLUTION
+\textbf{Problem \ref{stack_110457}} -- podstawiamy $x = \tan^{2/m} \theta$, co prowadzi do całki
+\begin{align}
+    I & = \int_0^\infty \frac{x^{n-1}}{1 + x^m} \,\mathrm{d} x \\
+      & = \int_0^{\pi/2} \frac 2 m \tan^{2n/m - 1} \theta \,\mathrm{d}\theta \\
+      & = \frac 1 m \beta\left( \frac nm, 1 - \frac nm \right) \\
+      & = \frac 1 m \Gamma \left(\frac nm\right) \Gamma \left(1 - \frac nm\right) \\
+      & = \frac \pi m \operatorname{csc} \frac {\pi n}{m}.
+\end{align}
+% SOLUTION
+
+%

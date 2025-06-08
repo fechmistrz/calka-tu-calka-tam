@@ -1,0 +1,37 @@
+\subsection{Oszacowania liczby $\pi$}
+\begin{problem}[całka Dalzella]
+\label{22_7_pi}%
+\begin{equation}
+    \int_0^1 \frac{x^4(1-x)^4}{1 + x^4} \,\mathrm{d}x = \frac{22}{7} - \pi.
+\end{equation}
+\end{problem}
+
+Donald Percy Dalzell \cite{dalzell44} jako pierwszy opublikował to cudo.
+Ograniczając mianownik z dołu oraz góry przez $1$ oraz $2$ możemy dojść do wniosku, że
+\begin{equation}
+    \frac{22}{7} - \frac {1}{630} < \pi < \frac{22}{7} - \frac{1}{1260},
+\end{equation}
+a więc pomylić się o mniej niż $0.015\%$!
+
+% TODO - na en.wiki jest łatwe w przepisaniu rozwiązanie
+% SOLUTION
+\textbf{Problem \ref{22_7_pi}} -- patrz \cite[s. 24]{nahin15}
+% SOLUTION
+
+% TODO: patrz też https://math.stackexchange.com/questions/1956/is-there-an-integral-that-proves-pi-333-106
+Istnieje wiele uogólnień powyższego wyniku do innych przybliżeń liczby $\pi$, dobrym źródłem dalszych informacji, a może nawet inspiracji jest artykuł Lucasa \cite{lucas05}.
+Na przykład:
+
+\begin{problem}
+\begin{equation}
+    \int_0^1 \frac {x^8(1-x)^8 (25+816x^2)}{3164 (1+x^2)} \,\mathrm{d} x = \frac {355}{113} - \pi.
+\end{equation}
+\end{problem}
+
+albo:
+
+\begin{problem}
+\begin{equation}
+    \int_0^1 \frac{x^5 ( 1-x)^6 (197 + 462 x^2)}{530 (1+x^2)} \,\mathrm{d}x = \pi - \frac{333}{106}.
+\end{equation}
+\end{problem}

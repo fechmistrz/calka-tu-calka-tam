@@ -1,0 +1,28 @@
+%
+
+\section{Teoretyczna teoria}
+\section{Teoretyczna teoria} % SOLUTION
+
+\begin{problem}[problem B4 na egzaminie Putnam 1968]
+    \label{putnam_1968_b4}%
+    Niech $f \colon \R \to \R$ będzie ciągłą funkcją taką, że całka $\int_\R f(x)\,\mathrm{d}x$ istnieje.
+    Pokazać, że całka
+    \begin{equation}
+        \int_\R f\left(x - \frac 1 x\right)\,\mathrm{d}x
+    \end{equation}
+    też istnieje i przyjmuje tę samą wartość.
+\end{problem}
+
+% SOLUTION
+\begin{solution}[do problemu \ref{putnam_1968_b4}]
+    Będziemy całkować przez podstawienie, $x = \exp \theta$ (i potem $x = - \exp -\theta$):
+    \begin{align}
+        \int_{-\infty}^{\infty}f\left(x-x^{-1}\right)dx&=\int_{0}^{\infty}f\left(x-x^{-1}\right)dx+\int_{-\infty}^{0}f\left(x-x^{-1}\right)dx=\\
+        &=\int_{-\infty}^{\infty}f(2\sinh\theta)\,e^{\theta}d\theta+\int_{-\infty}^{\infty}f(2\sinh\theta)\,e^{-\theta}d\theta=\\
+        &=\int_{-\infty}^{\infty}f(2\sinh\theta)\,2\cosh\theta\,d\theta=\\
+        &=\int_{-\infty}^{\infty}f(x)\,dx.
+    \end{align}
+\end{solution}
+% SOLUTION
+
+%

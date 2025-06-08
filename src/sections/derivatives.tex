@@ -1,0 +1,48 @@
+%
+
+\begin{proposition}
+    Pochodna jest operatorem liniowym:
+    \begin{equation}
+        \frac{\mathrm{d}}{\mathrm{d}x} [a f(x) + b g(x)] = a \frac{\mathrm{d}}{\mathrm{d}x} [f(x)] + b \frac{\mathrm{d}}{\mathrm{d}x} [g(x)].
+    \end{equation}
+\end{proposition}
+
+\begin{proposition}[reguła Leibniza]
+    \begin{equation}
+        \frac{\mathrm{d}}{\mathrm{d}x} [f(x)g(x)] =  g(x) \frac{\mathrm{d}}{\mathrm{d}x} [f(x)] + f(x)\frac{\mathrm{d}}{\mathrm{d}x} [g(x)].
+    \end{equation}
+\end{proposition}
+
+\begin{proof}
+    Dla oszczędności miejsca, $x_h := x + h$.
+\begin{align}
+    \frac{\mathrm{d}}{\mathrm{d}x} [f(x)g(x)]
+    & = \lim_{h \to 0} \frac{f(x_h)g(x_h) - f(x)g(x)}{h} \\
+    & = \lim_{h \to 0} \frac{f(x_h)g(x_h) - f(x)g(x_h) + f(x)g(x_h) - f(x)g(x)}{h} \\
+    & = \lim_{h \to 0} \frac{[f(x_h) - f(x)]g(x_h) + f(x)[g(x_h) - g(x)]}{h} \\
+    & = \lim_{h \to 0} \frac{f(x_h) - f(x)}{h} \lim_{h\to 0} g(x_h) + 
+        \lim_{h \to 0} \frac{g(x_h) - g(x)}{h} \lim_{h \to 0} f(x) \\
+    & = g(x) \frac{\mathrm{d}}{\mathrm{d}x} [f(x)] + f(x)\frac{\mathrm{d}}{\mathrm{d}x} [g(x)],
+\end{align}
+    ponieważ funkcje różniczkowalne są też ciągłe.
+\end{proof}
+
+\begin{proposition}
+    \label{prp:derivative_power}%
+    \begin{equation}
+        \frac{\mathrm{d}}{\mathrm{d}x} x^n = nx^{n-1}.
+    \end{equation}
+\end{proposition}
+
+\begin{proof}
+\begin{align}
+    \frac{\mathrm{d}}{\mathrm{d}x} x^n
+    & = \lim_{h \to 0} \frac{(x+h)^n - x^n}{h} \\
+    & = \lim_{h \to 0} \frac{1}{h} \left(\sum_{k=0}^n {n \choose k} x^k h^{n-k} - x^n \right) \\
+    & = \lim_{h \to 0} \frac{1}{h} \left(nx^{n-1}h + \sum_{k=0}^{n-2} {n \choose k} x^k h^{n-k}\right) \\
+    & = nx^{n-1} + \lim_{h \to 0} \left(\sum_{k=0}^{n-2} {n \choose k} x^k h^{n-k-1}\right) \\
+    & = nx^{n-1}.
+\end{align}
+\end{proof}
+
+%

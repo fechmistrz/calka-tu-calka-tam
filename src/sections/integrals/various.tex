@@ -1,0 +1,210 @@
+
+\section{Całki różne, różniste}
+% SOLUTION
+\section{Całki różne, różniste}
+% SOLUTION
+
+% https://en.wikipedia.org/wiki/Integral_of_the_secant_function#History
+Gerardus Mercator\footnote{Flamandzki matematyk i geograf.} opublikował \emph{,,Nova et Aucta Orbis Terrae Descriptio ad Usum Navigantium Emendata''}, czyli mapę świata, w 1569 roku.
+Do jej sporządzenia wykorzystał nowe odwzorowanie Ziemi, zwane obecnie także walcowym równokątnym.
+\index{odwzorowanie Mercatora}%
+Niestety nie przedstawił nigdzie swoich obliczeń!
+Usterkę tę naprawił dopiero Edward Wright w roku 1599, natrafiając jednocześnie na problem:
+\index[persons]{Wright, Edward}
+
+\begin{problem}
+    \begin{equation}
+        \int \sec x \,\mathrm{d} x = \log {| \sec x + \tan x|}.
+    \end{equation}
+\end{problem}
+
+Czas mijał (około czterdzieści lat), aż Henry Bond\footnote{Nauczyciel nawigacji, geodezji oraz innych matematycznych rzeczy.} porównał zawartość tablic logarytmicznych oraz wyniki Wrighta, co doprowadziło do postawienia hipotezy, jaka jest zwarta postać całki:
+\begin{equation}
+    \log \tan \left(\frac \pi 4 + \frac x 2\right).
+\end{equation}
+\index[persons]{Bond, Henry}%
+Potwierdzenie nie przyszło od razu; pierwszy był James Gregory\footnote{Szkocki matematyk i astronom.} w pracy \emph{,,Exercitationes Geometricae''} z 1668 roku, ale było tak trudne w zrozumieniu (chociaż poprawne; podstawił $u = \sec x + \tan x$), że Isaac Barrow\footnote{Angielski teolog i matematyk.} zaproponował w \emph{,,Lectiones Geometricae''} z 1670 roku zupełnie inne podejście.
+\index[persons]{Gregory, James}%
+\index[persons]{Barrow, Isaac}%
+Dowód Barrowa jest znany przede wszystkim dlatego, że zawiera najstarszy znany rozkład na ułamki proste podczas całkowania (!) po podstawieniu $u = \sin x$:
+\index{rozkład na ułamki proste}%
+\begin{align}
+    \int \sec x \,\mathrm{d}x = \int \frac{\cos x}{1-\sin^2 x}\,\mathrm{d}x = \int \frac{\mathrm{d}u}{1-u^2} = \frac 1 2 \int \frac{\mathrm{d}u}{1 + u} + \frac 1 2 \int \frac{\mathrm{d}u}{1 - u} = \ldots
+\end{align}
+Do tego samego rozkładu ułamków prowadzi podstawienie trygonometryczne $t = \tan (x/2)$.
+
+% TODO: https://math.stackexchange.com/questions/9286/evaluation-of-gaussian-integral-int-0-infty-mathrme-x2-dx
+% https://math.stackexchange.com/a/9292/1298830
+\begin{problem}[całka Gaußa, całka Eulera-Poissona]
+    \label{gauss_euler_poisson}%
+    \begin{equation}
+        \int_{-\infty}^\infty \exp \left( -x^2 \right) \,\mathrm{d} x = \sqrt{\pi}.
+    \end{equation}
+\end{problem}
+
+Wiemy, że Abraham de Moivre myślał o całkach podobnych do powyższej około 1733 roku; być może ktoś inny go ubiegł, ale nie pozostawił po sobie żadnego tropu.
+\index[persons]{de Moivre, Abraham}%
+Dokładny wynik podał dopiero Gauß na początku następnego wieku (rok 1809); wspomniał przy tym, że jest on zasługą Laplace'a.
+\index[persons]{Gauss, Carl Friedrich}%
+
+Oznaczmy szukaną całkę przez $I$.
+Laplace pokazał przy użyciu twierdzenia Fubiniego, że:
+\begin{align}
+    I^2 & = 4 \int_0^\infty \int_0^\infty \exp(-x^2 -y^2)\,\mathrm{d}y \,\mathrm{d}x \\
+    & = 4 \int_0^\infty \int_0^\infty x \exp [-x^2(1+s^2)]\,\mathrm{d}s \,\mathrm{d}x \\
+    & = 4 \int_0^\infty \int_0^\infty x \exp [-x^2(1+s^2)]\,\mathrm{d}x \,\mathrm{d}s \\
+    & = 4 \int_0^\infty \left. \frac{\exp(-x^2(1+s^2))}{-2(1+s^2)}\right|_{0}^{\infty} \,\mathrm{d}s \\
+    & = 2 \int_0^\infty \frac{\mathrm{d}s}{1+s^2} \\
+    & = 2 \left. \arctan s \right|_{0}^\infty = \pi.
+\end{align}
+
+Obecnie preferowana jest metoda Poissona, który zauważył, że można zrobić to samo, co wyżej (skoro całkowana funkcja $\exp (\ldots)$ jest nieujemna, to całka jest równa pierwiastkowi ze swojego kwadratu), ale wykorzystując po drodze współrzędne biegunowe:
+\index[persons]{Poisson, ?}%
+\begin{align}
+    I^2 & = \left(\int_{-\infty}^\infty \exp \left( -x^2 \right) \,\mathrm{d}x\right)\left(\int_{-\infty}^\infty \exp \left( -y^2 \right) \,\mathrm{d}y\right) \\
+    & = \int_{-\infty}^\infty \int_{-\infty}^\infty \exp \left(-x^2-y^2\right) \,\mathrm{d}x\,\mathrm{d}y \\
+    & = \int_0^{2\pi} \int_0^\infty r \exp (-r^2) \,\mathrm{d}r\, \mathrm{d}\theta \\
+    & = 2\pi \int_0^\infty r \exp (-r^2) \,\mathrm{d} r \\
+    & = 2\pi \int^0_{-\infty} \frac 1 2 \exp s \,\mathrm{d} s \\
+    & = \pi.
+\end{align}
+Co ciekawe, opisana technika nie działa wobec jakiejkolwiek innej całki! Patrz notka Dawsona \cite{dawson05}.
+
+Algorytm Rischa pokazuje, że całka nieoznaczona tej samej funkcji, $\exp (-x^2)$, nie daje się wyrazić przez funkcje elementarne.
+Natomiast całkę pozornie bardziej skomplikowanej funkcji $x \exp (-x^2)$ można szybko znaleźć podstawiając $u = x^2$, a jeśli w naszym arsenale jest jeszcze różniczkowanie pod znakiem całki, to wykażemy prawie tak samo szybko, że
+\begin{equation}
+    \int_{-\infty}^\infty x^{2n} \exp (-x^2) \,\mathrm{d}x = \frac{(2n-1)!!}{2^n} \sqrt \pi.
+\end{equation}
+
+% https://math.stackexchange.com/questions/34767/int-infty-infty-e-x2-dx-with-complex-analysis
+Inne rozwiązanie zaczyna się od podstawienia $u = x^2$.
+Wtedy na mocy wzoru odbiciowego Eulera $\Gamma (z) \Gamma(1-z) = \pi/\sin \pi z$ mamy:
+\begin{align}
+	I = \int_0^\infty u^{-1/2} e^{-u}\,\mathrm{d}u = \Gamma \left(\frac 12\right) = \sqrt{\pi}.
+\end{align}
+(Jeszcze więcej rozwiązań dostarcza dyskusja pod pytaniem nr 34767 w portalu Math Stackexchange).
+
+
+
+
+\begin{problem}[sinus całkowy]
+    \begin{equation}
+        \int_0^\infty \frac {\sin x}{x} \,\mathrm{d} x = \frac \pi 2.
+    \end{equation}
+\end{problem}
+
+Sinus (i kosinus) całkowy pojawiają się także w całkach:
+\begin{align}
+    I_1 & = \int_0^\infty \frac{\sin mx}{x + b} \,\mathrm{d}x, \\
+    I_2 & = \int_0^\infty \frac{\sin mx}{ax^2 + bx + c} \,\mathrm{d}x,
+\end{align}
+jak panowie Boros, Moll \cite[s. 136]{boros04} napisali.
+
+% TODO: https://math.stackexchange.com/questions/13344/proof-of-int-0-infty-left-frac-sin-xx-right2-mathrm-dx-frac-pi2
+\begin{problem}
+    \begin{equation}
+        \int_0^\infty \left(\frac {\sin x}{x}\right)^2 \,\mathrm{d} x = \frac \pi 2.
+    \end{equation}
+\end{problem}
+
+\subsection{Funkcje Gamma i Beta}
+% SOLUTION
+\subsection{Funkcje Gamma i Beta}
+% SOLUTION
+\begin{problem}
+\label{exp_x_3_gamma_4_3}%
+    \begin{equation}
+        I = \int_{0}^\infty \exp \left( -x^3 \right) \,\mathrm{d} x = \Gamma \left( \frac 4 3 \right).
+    \end{equation}
+\end{problem}
+
+Patrz też \cite[s. 119]{nahin15}.
+
+% SOLUTION
+\textbf{Problem \ref{exp_x_3_gamma_4_3}} -- podstawiamy $y = x^3$, wtedy $\mathrm{d}x = \frac 1 3 y^{-2/3} \mathrm{d}y$
+% SOLUTION
+
+\begin{problem}
+\label{wallis_x_x2_n}%
+    \begin{equation}
+        I_n = \int_{0}^1 (x-x^2)^n \,\mathrm{d} x = \frac{(n!)^2}{(2n+1)!}
+    \end{equation}
+\end{problem}
+
+Około 1650 roku John Wallis badał tę całkę i zgadł jej wartość dla dowolnego $n \in \N$ na podstawie wartości dla małych wartości.
+Patrz też \cite[s. 119-122]{nahin15}.
+
+% SOLUTION
+\textbf{Problem \ref{wallis_x_x2_n}} -- zauważamy, że całkę Wallisa można wyrazić przez funkcję Beta:
+\begin{align}
+	I_n = \int_{0}^1 x^n (1-x)^n \,\mathrm{d} x = B(n+1, n+1) = \frac{\Gamma(n+1) \Gamma(n+1)}{\Gamma(2n+2)}.
+\end{align}
+% SOLUTION
+
+Po podstawieniu $n = 1/2$ w problemie \ref{wallis_x_x2_n} widzimy, że $I_{1/2} = \frac 1 2 \Gamma(3/2)^2$.
+Ale tę samą całkę można znaleźć wykorzystując geometryczną interpretację całki jako pola powierzchni pod wykresem funkcji.
+Łatwo widać, że wykres to górny półokrąg o środku w punkcie $(1/2, 0)$ i promieniu $(1/2)$, zatem szukane pole to $\frac \pi 8$, i stąd wynika już, że $\Gamma(3/2) = \sqrt{\pi}/2$.
+Teraz wystarczy wstawić uzyskane wyniki do definicji funkcji Gamma i odkryć jak \cite[s. 123]{nahin15}, że
+\begin{equation}
+    \int_{0}^\infty \exp(-x) \sqrt{x} \,\mathrm{d} x = \frac{\sqrt \pi}{2}.
+\end{equation}
+
+\begin{problem_with_solution}
+\label{sqrt_minus_log}%
+    \begin{equation}
+        \int_{0}^1 \sqrt{- \log x} \,\mathrm{d} x = \frac{\sqrt \pi}{2}.
+    \end{equation}
+\end{problem_with_solution}
+
+% SOLUTION
+\textbf{Problem \ref{sqrt_minus_log}} -- podstawiamy $y = - \log x$.
+% SOLUTION
+
+\begin{problem_with_solution}
+    \label{boros_moll_p95}%
+    \begin{equation}
+        \int_0^\infty x^n \exp (-px) \,\mathrm{d}x = \frac{n!}{p^{n+1}}.
+    \end{equation}
+\end{problem_with_solution}
+
+Rodzina wszystkich kombinacji liniowych funkcji postaci $x^n \exp (-x)$ jest zamknięta na branie całek nieoznaczonych, o~pokazanie tego proszą Boros i Moll \cite[s. 103]{boros04}.
+Podobnie jest dla całek funkcji postaci $x^n \sin(x)^m$, patrz \cite[s. 135]{boros04} oraz funkcji postaci  $x^n \sin(x)^m$, patrz  \cite[s. 136]{boros04}. % TODO przepisać te całki?
+
+% SOLUTION
+\textbf{Problem \ref{boros_moll_p95}} -- zróżniczkować $n$ razy względem $p$, jak Boros, Moll \cite[s. 95]{boros04}.
+% SOLUTION
+
+\begin{problem_with_solution}
+    \label{boros_moll_p97}%
+    \begin{equation}
+        \int_0^1 x^n \log^k x \,\mathrm{d}x = \frac{(-1)^k \cdot k!}{(n+1)^{k+1}}.
+    \end{equation}
+\end{problem_with_solution}
+
+% SOLUTION
+\textbf{Problem \ref{boros_moll_p97}} -- zróżniczkować całkę z $x^n$ nad $[0, 1]$ względem $n$ jak Boros, Moll \cite[s. 97]{boros04}.
+% SOLUTION
+
+Po zamianie zmiennych dostajemy:
+
+\begin{problem}
+    \begin{equation}
+        \int_0^\infty x^k \exp (-x) \,\mathrm{d}x = k!.
+    \end{equation}
+\end{problem}
+
+%%%%%%%%%%%%%%%%%
+
+\begin{problem_with_solution}
+    Niech $P$ będzie wielomianem stopnia $2m$. Znaleźć
+    \label{boros_moll_p105}%
+    \begin{equation}
+        \int_0^\infty \frac{P(x) \,\mathrm{d}x}{(ax^2 + bx + c)^{m+1}}
+    \end{equation}
+\end{problem_with_solution}
+
+Szczególny przypadek ($P(x) \equiv 1$, $a = c = 1$, $b = 0$) został rozprawiony się z nim w 1656 przez Wallisa.
+
+% SOLUTION
+\textbf{Problem \ref{boros_moll_p105}} -- Boros, Moll \cite[s. 105--koniecrozdziału6]{boros04}.
+% SOLUTION

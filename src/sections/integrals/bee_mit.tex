@@ -1,0 +1,24 @@
+%
+
+\subsection{MIT Integration BEE 2024}
+
+\begin{problem_with_solution}[ćwierćfinał 2, problem 2]
+    \label{bee_mit_2024_q2_p2}%
+    \begin{equation}
+        I = \int_0^1 \frac 1 x \log (1 + x^2 + x^3 + x^4 + x^5 + x^6 + x^7 + x^9) \,\mathrm{d}x
+    \end{equation}
+\end{problem_with_solution}
+
+% SOLUTION
+% https://math.stackexchange.com/questions/1617081/proving-an-integration-equality
+\textbf{Problem \ref{bee_mit_2024_q2_p2}} -- łatwo widać, że szukana całka jest równa $I_2 + I_3 + I_4$, gdzie
+\begin{align}
+    I_n & = \int_0^1 \frac {\log (1 + x^n)}{x} \,\mathrm{d}x \\
+        & = \frac 1 n \int_0^1 \frac {\log (1 + x)}{x} \,\mathrm{d}x \\
+        & = \frac 1 n \int_0^1 \frac 1 x \sum_{k=1}^\infty \frac{(-1)^{k-1}x^k}{k} \,\mathrm{d}x \\
+        & = \frac 1 n \sum_{k=1}^\infty \frac{(-1)^{k-1}}{k^2} \\
+        & = \frac {\pi^2}{12n}.
+\end{align}
+% SOLUTION
+
+%

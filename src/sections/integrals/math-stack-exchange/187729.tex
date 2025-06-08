@@ -1,0 +1,30 @@
+%
+
+% https://math.stackexchange.com/questions/187729/evaluating-int-0-infty-sin-x2-dx-with-real-methods
+\begin{problem_with_solution}[pytanie 187729, całka Fresnela]
+    \label{stack_187729}%
+    \begin{equation}
+        I = \int_0^\infty \sin (x^2) \,\mathrm{d} x = \sqrt{\frac \pi 8}.
+    \end{equation}
+\end{problem_with_solution}
+
+Całki Fresnela mają praktyczne zastosowanie, historycznie pierwszym było obliczenie natężenia pola elektromagnetycznego w środowisku, gdzie światło ugina się wokół nieprzezroczystych obiektów.
+\index{całka Fresnela}%
+
+% SOLUTION
+\textbf{Problem \ref{stack_187729}} -- znajdziemy ogólniejszą całkę $I_\lambda$ funkcji $\sin(x^2) e^{-\lambda x^2}$ nad zbiorem $[0, \infty)$.
+\begin{align}
+    I_\lambda^2 & = \left(\int_0^\infty \sin(x^2) e^{-\lambda x^2} \,\mathrm{d}x \right)^2 \\
+    & = \int_0^\infty \int_0^\infty \sin(x^2)\sin(y^2) e^{- \lambda(x^2+y^2)}\,\mathrm{d}y\,\mathrm{d}x \\
+    & = \frac12 \int_0^\infty \int_0^\infty \left(\cos(x^2-y^2)-\cos(x^2+y^2)\right) e^{- \lambda(x^2+y^2)}\,\mathrm{d}y\,\mathrm{d}x \\
+    & = \frac12 \int_0^{\pi/2} \int_0^\infty \left(\cos(r^2\cos(2\phi))-\cos(r^2)\right)e^{- \lambda r^2} \,r\,\mathrm{d}r\,\mathrm{d}\phi \\
+    & = \frac14 \int_0^{\pi/2} \int_0^\infty \left(\cos(s\cos(2\phi))-\cos(s)\right) e^{- \lambda s} \,\mathrm{d}s\,\mathrm{d}\phi \\
+    & = \frac14 \int_0^{\pi/2} \left( \frac{ \lambda}{\cos^2(2\phi)+ \lambda^2} - \frac{ \lambda}{1+ \lambda^2}\right)\,\mathrm{d}\phi \\
+    & = \frac12 \int_0^{\pi/4} \frac{ \lambda\,\mathrm{d}\phi}{\cos^2(2\phi)+ \lambda^2} - \frac{ \lambda\pi/8}{1+ \lambda^2} \\
+    & = \frac14 \int_0^{\pi/4} \frac{ \lambda\,\mathrm{d} \tan(2\phi)} {1+ \lambda^2+ \lambda^2 \tan^2(2\phi)} - \frac{ \lambda\pi/8}{1+ \lambda^2} \\
+    & = \frac14 \int_0^\infty \frac1{1+ \lambda^2+t^2}\,\mathrm{d}t - \frac{ \lambda\pi/8}{1+ \lambda^2} \\
+    & = \frac{\pi/8}{\sqrt{1+ \lambda^2}} - \frac{ \lambda\pi/8}{1+ \lambda^2}
+\end{align}
+% SOLUTION
+
+%

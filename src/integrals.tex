@@ -1,0 +1,155 @@
+\documentclass[9pt, twoside, a5paper, fleqn]{extbook}
+\usepackage[
+	margin=10mm,
+    headsep=5mm,
+	twoside,
+    includehead,
+    % showframe,
+]{geometry}
+
+\usepackage{fancyhdr}
+\fancypagestyle{plain}{
+    \fancyhf{}
+    \fancyfoot[C]{}
+    \renewcommand{\headrulewidth}{0pt}
+    \renewcommand{\footrulewidth}{0pt}
+}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+% 341      Rozdział 7. Coś z algebry | 7.2 Pierścień adeli              342 |
+\fancyhead[LE]{\thepage}
+\fancyhead[RE]{\nouppercase{\leftmark}, wersja z 8 czerwca 2025}
+\fancyhead[LO]{\nouppercase{\rightmark}, wersja z 8 czerwca 2025}
+\fancyhead[RO]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.0pt}
+
+\usepackage{parskip}
+\usepackage{multicol}
+\usepackage{float} % [H] for figure environment
+\usepackage{hyperref} % for \url and \href
+
+\usepackage{polski}
+\usepackage[T1]{fontenc}
+
+\usepackage{xcolor}
+
+\usepackage{amsmath, amsfonts, amssymb, amsthm}
+\DeclareMathOperator{\arsinh}{arsinh}
+\DeclareMathOperator{\csch}{csch}
+
+\newcommand{\N}{{\mathbb N}}
+\newcommand{\R}{{\mathbb R}}
+
+
+
+\newcounter{counter}
+% \numberwithin{counter}{chapter}
+\newtheorem{proposition}[counter]{Fakt}
+\newtheorem{problem}[counter]{Problem}
+\newtheorem{problem_with_solution}[counter]{Problem z rozwiązaniem}
+\newtheorem{exercise}{Exercise}[chapter]
+
+\theoremstyle{remark}
+\newtheorem*{solution}{Rozwiązanie}
+
+\author{Imię Nazwisko}
+\title{Tytuł książki}
+
+\usepackage{imakeidx}
+\usepackage{makeidx}
+\usepackage{etoolbox} % for patchcmd
+\patchcmd{\theindex}{\MakeUppercase\indexname}{\sffamily\normalsize\bfseries\indexname}{}{}
+\makeindex[title=Skorowidz]
+\makeindex[name=persons,title=Indeks osób]
+
+\usepackage{Alegreya}
+
+\usepackage[printwatermark]{xwatermark}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{lipsum}
+
+\newwatermark*[allpages,color=red!50,angle=45,scale=3,xpos=0,ypos=0]{DRAFT}
+
+\begin{document}
+\input{00_intro/head_1}
+\input{00_intro/head_2}
+\input{00_intro/head_3}
+\input{00_intro/head_4}
+\input{00_intro/head_5}
+
+\raggedbottom
+
+\chapter{Pochodne}
+\input{sections/derivatives}
+
+\chapter{Całki}
+\input{sections/by_derivatives}
+\input{sections/makefile-problems/by_substitution}
+\input{sections/makefile-problems/by_parts}
+\input{sections/makefile-problems/rational}
+\input{sections/makefile-problems/rational-pi}
+\input{sections/makefile-problems/trig}
+\input{sections/makefile-problems/various}
+
+\textbf{Ramanujan's Master Theorem}: jeśli funkcja $F$ rozwija się w szereg Taylora, to momenty $F$ dane są wzorem... Boros, Moll, ps. 151.
+
+\input{sections/differential_binomial}
+% \section{Całkowanie funkcji trygonometrycznych}
+% Całkowanie funkcji trygonometrycznych
+	\input{sections/makefile-problems/feynman_trick}
+
+\section{Zadania z turniejów całkowania}
+	\input{sections/makefile-problems/bee_mit}
+
+\input{sections/makefile-problems/theoretic}
+
+\section{Trudne całki}
+	\input{sections/makefile-problems/hard}
+	\input{sections/makefile-problems/hard_valean}
+	\input{sections/makefile-problems/hard_stackexchange}
+
+\chapter{Rozwiązania}
+% \input{sections/by_derivatives}
+\input{sections/makefile-solutions/by_substitution}
+\input{sections/makefile-solutions/by_parts}
+\input{sections/makefile-solutions/rational}
+\input{sections/makefile-solutions/trig}
+\input{sections/makefile-solutions/various}
+% \input{sections/differential_binomial}
+% \section{Całkowanie funkcji trygonometrycznych}
+% Całkowanie funkcji trygonometrycznych
+\input{sections/makefile-solutions/feynman_trick}
+
+\section{Zadania z turniejów całkowania}
+	\input{sections/makefile-solutions/bee_mit}
+
+\input{sections/makefile-solutions/theoretic}
+
+\section{Trudne całki}
+	\input{sections/makefile-solutions/hard}
+	\input{sections/makefile-solutions/hard_valean}
+	\input{sections/makefile-solutions/hard_stackexchange}
+
+\chapter{Tłumaczenie numeracji}
+\input{sections/banas_wedrychowicz}
+
+\indexprologue{\small Tekst prologu I.}
+\printindex
+
+\indexprologue{\small Tekst prologu II.}
+\printindex[persons]
+
+\raggedright
+\bibliography{integrals}{}
+\bibliographystyle{plain}
+
+\end{document}
+
+% TODO: https://www.amazon.com/dp/0867202939
+% TODO: $$\int_0^\infty \log(x) / (1+x^2) dx = 0$$ (Euler?)
+% TODO: $$\int_0^\infty 1/(x^3 - 1) dx = -pi sqrt 3 / 9$$
+
+% TODO: https://math.stackexchange.com/questions/tagged/integration?tab=votes&page=2&pagesize=15

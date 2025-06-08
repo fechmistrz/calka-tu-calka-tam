@@ -1,0 +1,23 @@
+%
+
+% https://math.stackexchange.com/questions/507425/an-integral-involving-airy-functions-int-0-infty-fracxp-operatornameai
+\begin{problem_with_solution}[pytanie 507425]
+    \label{stack_507425}%
+    Niech
+    \begin{align}
+        \operatorname{Ai} (x) & = \frac 1 \pi \int_0^\infty \cos \left( x z + \frac {z^3} 3 \right) \,\mathrm{d}z, \\
+        \operatorname{Bi} (x) & = \frac 1 \pi \int_0^\infty \sin \left( x z + \frac {z^3} 3 \right) + \exp \left( x z - \frac {z^3} 3 \right) \,\mathrm{d}z
+    \end{align}
+    będą funkcjami Airy'ego, zaś $n \in \mathbb N$ parametrem.
+    Znaleźć
+    \begin{equation}
+        I_n = \int_0^\infty \frac{x^{3n} \,\mathrm{d} x}{(\operatorname{Ai} x)^2 + (\operatorname{Bi} x)^2}.
+    \end{equation}
+\end{problem_with_solution}
+
+% SOLUTION
+\textbf{Problem \ref{stack_507425}} -- $I_n = \pi^2 a_{2n} / (6 \cdot 2^{7n})$, gdzie $a_0 = 1$, $a_{n+1} = (6n+4)a_n \sum_{k=0}^n a_k a_{n-k}$.
+% SOLUTION
+
+
+%

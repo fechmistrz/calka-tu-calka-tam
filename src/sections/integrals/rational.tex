@@ -1,0 +1,109 @@
+%
+
+\section{Całkowanie funkcji wymiernych}
+% SOLUTION
+\section{Całkowanie funkcji wymiernych}
+% SOLUTION
+
+\begin{problem_with_solution}
+    \label{banas_12_100}%
+\begin{equation}
+    \int \frac{\mathrm{d}x}{x^3 + x}.
+\end{equation}
+\end{problem_with_solution}
+
+% SOLUTION
+\textbf{Problem \ref{banas_12_100}} -- wyłączyć z mianownika $x^3$, podstawić $u = 1 + x^{-2}$ i znaleźć całkę z funkcji $1/u$.
+Alternatywnie, rozłożyć na ułamki proste i dopiero potem podstawiać.
+Wynik to
+\begin{equation}
+    I_{B100} = \log x - \frac 12 \log (x^2 + 1).
+\end{equation}
+% SOLUTION
+
+\begin{problem_with_solution}
+    \label{banas_12_118}%
+\begin{equation}
+    \int \frac{3x^3 - 8x + 5}{\sqrt{x^2 - 4x - 7}} \,\mathrm{d}x.
+\end{equation}
+\end{problem_with_solution}
+
+% SOLUTION
+\textbf{Problem \ref{banas_12_118}} -- podstawić $u = x - 2$, a potem $w = \sqrt{11} \sec u$.
+To prowadzi do całki, która jest kombinacją liniową potęg sekansa ($\sec, \sec^2, \sec^3, \sec^4$).
+Wynik po odwróceniu podstawień to
+\begin{equation}
+    \sqrt{x^2 - 4x - 7} (x^2 + 5x + 36) + 112 \log \left(2 - x - \sqrt{x^2 - 4x-7}\right).
+\end{equation}
+% SOLUTION
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{problem}
+\label{boros_4287}%
+\begin{equation}
+    \int_0^\infty \frac{x^n \,\mathrm{d}x}{(ax+b)^{m+1}}  = \frac{(-1)^{n+1} (-1-m)! \cdot n!}{a^{n+1} b^{m-n} (n-m)!}
+\end{equation}
+\end{problem}
+
+% SOLUTION
+\textbf{Problem \ref{boros_4287}} -- patrz \cite[s. 48-60]{boros04}
+% SOLUTION
+
+\begin{problem}
+\label{frac_1_x3_1}%
+\begin{equation}
+    \int_0^\infty \frac{\mathrm{d}x}{x^3 - 1} = - \frac{\pi}{3\sqrt{3}}
+\end{equation}
+\end{problem}
+
+% SOLUTION
+\textbf{Problem \ref{frac_1_x3_1}} -- patrz \cite[s. 22]{nahin15}
+% SOLUTION
+
+\begin{problem}
+    \label{experimental_mathematics_p258}%
+\begin{equation}
+    \int_0^\infty \frac{x^8-4x^6+9x^4-5x^2+1}{x^{12}-10x^{10}+37x^8-42x^6+26x^4-8x^2+1} \,\mathrm{d}x = \frac{\pi}{2}
+\end{equation}
+\end{problem}
+
+% SOLUTION
+\textbf{Problem \ref{experimental_mathematics_p258}} -- patrz \cite[s. 258]{bailey07}.
+% SOLUTION
+
+Rozdział 3 Borosa i Molla (TODO), rozdział 6. Całki postaci zostawia jako teren do eksploracji dla Czytelnika, a sami rozważają całki postaci
+\begin{equation}
+    \int_0^\infty \frac{P(x) \,\mathrm{d}x}{(q_4 x^4 + q_2 x^2 + q_0)^{m+1}},
+\end{equation}
+gdzie $m \in \mathbb N$, zaś $P$ jest wielomianem stopnia co najwyżej $4m + 2$.
+Przykładowe zadania: \ref{boros_moll_7_1_1}, \ref{boros_moll_7_2_3}.
+
+\subsection{Rozkład na ułamki proste}
+% SOLUTION
+\subsection{Rozkład na ułamki proste}
+% SOLUTION
+
+\begin{problem_with_solution}
+    \label{boros_moll_7_1_1}
+\begin{equation}
+    \int_0^\infty \frac{3x^3 \,\mathrm{d}x}{(x^4 + 4x^2 + 1)^5} = \frac{5}{20736} \cdot \left(60 + 7 \sqrt{3} \log \left(7 - 4 \sqrt {3}\right)\right).
+\end{equation}
+\end{problem_with_solution}
+
+% SOLUTION
+\textbf{Problem \ref{boros_moll_7_1_1}} -- patrz \cite[s. 138]{boros04}.
+% SOLUTION
+
+%

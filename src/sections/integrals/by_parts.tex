@@ -1,0 +1,263 @@
+%
+
+\section{Całkowanie przez części}
+
+\begin{proposition}[wzór na całkowanie przez części]
+\label{prp_int_by_parts}%
+    Jeśli funkcje $f, g \colon I \to \R$ są różniczkowalne, to
+    \begin{equation}
+        \int f(x) g'(x) \,\mathrm{d}x = f(x) g(x) - \int f'(x) g(x) \,\mathrm{d} x.
+    \end{equation}
+\end{proposition}
+
+\begin{proof}
+    Najpierw całkujemy obie strony wzoru na pochodną iloczynu $(fg)' = fg' + f'g$, a następnie porządkujemy strony równości.
+\end{proof}
+
+% Banaś, Wędrychowicz: 12.1
+\begin{problem_with_solution}
+    \label{banas_12_1}%
+    \begin{equation}
+        \int x \sin x \,\mathrm{d} x.
+    \end{equation}
+\end{problem_with_solution}
+
+% SOLUTION
+\textbf{Problem \ref{banas_12_1}}.
+Całkujemy przez części, $f(x) = x$, $g'(x) = \sin x$.
+\begin{align}
+    \int x \sin x \,\mathrm{d} x & = -x \cos x - \int - \cos x \, \mathrm{d}x \\
+                                 & = -x \cos x + \sin x.
+\end{align}
+% SOLUTION
+
+Analogicznie obliczamy całki funkcji $x \cos x$ albo $x \exp x$.
+
+% Banaś, Wędrychowicz: 12.6
+\begin{problem_with_solution}
+    \label{banas_12_6}%
+    \begin{equation}
+        \int x \arctan x \,\mathrm{d} x.
+    \end{equation}
+\end{problem_with_solution}
+
+% SOLUTION
+\textbf{Problem \ref{banas_12_6}}.
+Całkujemy przez części, $f(x) = \arctan x$, $g'(x) = x$.
+\begin{align}
+    \int x \arctan x \, \mathrm{d} x
+    & = \frac 12 x^2 \arctan x - \int \frac{x^2 \,\mathrm{d}x}{2(x^2+1)} \\
+    & = \frac 12 x^2 \arctan x - \frac 12 \left(\int 1 \,\mathrm{d}x - \int \frac{\mathrm{d}x}{x^2+1} \right) \\
+    & = \frac 12 x^2 \arctan x - \frac 12 \left(x - \arctan x \right) \\
+    & = \frac 12 \left((x^2+1)\arctan x - x \right).
+\end{align}
+% SOLUTION
+
+% Banaś, Wędrychowicz: 12.7
+\begin{problem_with_solution}
+    \label{banas_12_7}%
+    \begin{equation}
+        \int x^n \log x \,\mathrm{d} x.
+    \end{equation}
+\end{problem_with_solution}
+
+% SOLUTION
+\textbf{Problem \ref{banas_12_7}}.
+Całkujemy przez części, $f(x) = \log x$, $g'(x) = x^n$.
+\begin{align}
+    \int x^n \log x \, \mathrm{d} x & = \frac{x^{n+1} \log x}{n+1} - \int \frac{x^n \,\mathrm{d} x}{n+1} \\
+                                    & = \frac{x^{n+1} \log x}{n+1} - \frac{x^{n+1}}{(n+1)^2}.
+\end{align}
+% SOLUTION
+
+% Banaś, Wędrychowicz: 12.8
+\begin{problem_with_solution}
+    \label{banas_12_8}%
+    \begin{equation}
+        \int \arccos x \,\mathrm{d} x.
+    \end{equation}
+\end{problem_with_solution}
+
+% SOLUTION
+\textbf{Problem \ref{banas_12_8}}.
+Całkujemy najpierw przez części, $f(x) = \arccos x$, $g'(x) = 1$, żeby następnie podstawić $u = 1 - x^2$, $\mathrm{d} u = -2x \mathrm{d}x$:
+\begin{align}
+    \int \arccos x \, \mathrm{d} x & = x \arccos x - \int  \frac{-x \,\mathrm{d}x}{\sqrt{1-x^2}} \\
+    & = x \arccos x - \frac 12 \int \frac {\mathrm{d}u}{\sqrt{u}} \\
+    & = x \arccos x - \sqrt{1 - x^2}.
+\end{align}
+% SOLUTION
+
+Analogicznie obliczamy całkę funkcji $\arcsin x$.
+
+% Banaś, Wędrychowicz: 12.10
+\begin{problem_with_solution}
+    \label{banas_12_10}%
+    \begin{equation}
+        \int x \cdot (\tan x)^2 \,\mathrm{d} x.
+    \end{equation}
+\end{problem_with_solution}
+
+% SOLUTION
+\textbf{Problem \ref{banas_12_10}}.
+Całkujemy przez części, $f(x) = x$, $g'(x) = (\tan x)^2$.
+\begin{align}
+    \int x \cdot (\tan x)^2 x \, \mathrm{d} x & = x (\tan x - x) - \int (\tan x - x) \,\mathrm{d}x \\
+    & = x (\tan x - x) - \left(-\log(\cos(x)) - \frac{x^2}{2}\right).
+\end{align}
+% SOLUTION
+
+% Banaś, Wędrychowicz: 12.11
+\begin{problem_with_solution}
+    \label{banas_12_11}%
+    \begin{equation}
+        \int x \cdot (\cos x)^2 \,\mathrm{d} x.
+    \end{equation}
+\end{problem_with_solution}
+
+% SOLUTION
+\textbf{Problem \ref{banas_12_11}}.
+Ponieważ $\cos 2x = 2 \cos^2 x - 1$, potrzebujemy znaleźć prostszą całkę 
+\begin{align}
+    \int x \cos 2x \, \mathrm{d} x.
+\end{align}
+Całkujemy przez części: $f(x) = x$, $g'(x) = \cos 2x$, co prowadzi do jeszce prostszej całki funkcji $\sin 2x$.
+Ostatecznie
+\begin{align}
+    \int x \cos 2x \, \mathrm{d} x = \frac 1 8 \left(2x^2 + 2x \sin 2x + \cos 2x\right).
+\end{align}
+% SOLUTION
+
+% Banaś, Wędrychowicz, 12.12 to całka z x log(x^2+1), ale tam wystarczy podstawić u = x^2 + 1, wtedy du = 2x dx.
+% Banaś, Wędrychowicz, 12.16
+% Banaś, Wędrychowicz, 12.17.
+\begin{problem_with_solution}
+    \label{banas_12_12}%
+    \begin{equation}
+        \int (\log x)^n \,\mathrm{d}x.
+    \end{equation}
+\end{problem_with_solution}
+
+% SOLUTION
+\textbf{Problem \ref{banas_12_12}}.
+Całkujemy przez części, $f(x) = (\log x)^n$, $g'(x) = 1$.
+Dostajemy początek rekurencji:
+\begin{equation}
+    \int (\log x)^n \, \mathrm{d}x = x (\log x)^n - n \int (\log x)^{n-1} \,\mathrm{d} x.
+\end{equation}
+z warunkiem brzegowym:
+\begin{equation}
+    \int \log x\, \mathrm{d}x = x\log x - x.
+\end{equation}
+% SOLUTION
+
+% Banaś, Wędrychowicz, 12.13.
+\begin{problem_with_solution}
+    \label{banas_12_13}%
+    \begin{equation}
+        \int x^n e^x \,\mathrm{d} x.
+    \end{equation}
+\end{problem_with_solution}
+
+% SOLUTION
+\textbf{Problem \ref{banas_12_13}}.
+Dowiedziemy tego indukcyjnie.
+Dla $n = 0$, całka jest elementarna.
+Jeżeli $n \ge 1$, to całkujemy przez części: $f(x) = x^n$, $g'(x) = e^x$ i dostajemy zależność rekurencyjną
+\begin{equation}
+    I_n = x^n e^x - nI_{n-1},
+\end{equation}
+której rozwiązaniem jest
+\begin{equation}
+    I_n = e^x \sum_{k=0}^n (-1)^{n-k} \frac{n!}{k!}x^k.
+\end{equation}.
+% SOLUTION
+
+% Banaś, Wędrychowicz, 12.14.
+% Banaś, Wędrychowicz, 12.15.
+% Banaś, Wędrychowicz, 12.25.
+\begin{problem_with_solution}
+    \label{banas_12_14}%
+    \begin{equation}
+        \int x^3 \sin x \, \mathrm{d}x.
+    \end{equation}
+\end{problem_with_solution}
+
+% SOLUTION
+\textbf{Problem \ref{banas_12_14}}.
+Całkujemy przez części, $f(x) = x^3$, $g'(x) = \sin x$.
+Dostajemy początek rekurencji:
+\begin{equation}
+    \int x^3 \sin x \, \mathrm{d}x = - x^3 \cos x - \int - 3x^2 \cos x \,\mathrm{d}x
+\end{equation}
+rozwiązaniem której jest $3 (x^2-2) \sin x + x (6-x^2) \cos x$.
+% SOLUTION
+
+\begin{problem}
+    % pomocnicza dla Banaś 12.19
+    \label{banas_12_19_auxilia}%
+    \begin{equation}
+        \int e^x \sin x \,\mathrm{d}x = \frac {e^x} 2 (\sin x - \cos x).
+    \end{equation}
+\end{problem}
+
+% Banaś, Wędrychowicz, 12.22.
+% \begin{problem}
+% Banaś-Wędrychowicz, 12.22. % x^2 e^x sin x
+% \end{problem}
+
+% Banaś, Wędrychowicz, 12.23.
+% \begin{problem}
+% Banaś-Wędrychowicz, 12.23. % x / (sin ^2 x)
+% \end{problem}
+
+% Banaś, Wędrychowicz, 12.24.
+% \begin{problem}
+% Banaś-Wędrychowicz, 12.24. % x arcsin x / (1 - x^2)
+% \end{problem}
+
+% Banaś, Wędrychowicz, 12.26.
+\begin{problem_with_solution}
+    \label{banas_12_26}%
+    \begin{equation}
+        \int \frac{x \log(\sqrt{x^2+1}+x)}{\sqrt{x^2+1}} \,\mathrm{d}x.
+    \end{equation}
+\end{problem_with_solution}
+
+% SOLUTION
+\textbf{Problem \ref{banas_12_26}}.
+Zauważamy, że $\log(\sqrt{x^2+1} + x) = \arsinh x$, a następnie całkujemy przez części: $f(x) = \arsinh x$, $g'(x) = x / \sqrt{x^2+1}$, wtedy $f(x) = 1/\sqrt{x^2+1}$, $g(x) = \sqrt{x^2+1}$.
+Ostateczny wynik to $\sqrt{x^2+1} \arsinh x - x$.
+% SOLUTION
+
+% Banaś, Wędrychowicz, 12.27.
+\begin{problem_with_solution}
+    \label{banas_12_27}%
+    \begin{equation}
+        \int \arctan \sqrt{x} \,\mathrm{d}x.
+    \end{equation}
+\end{problem_with_solution}
+
+% SOLUTION
+\textbf{Problem \ref{banas_12_27}}.
+Całkujemy przez części: $f(x) = \arctan \sqrt x$, $g'(x) = 1$, potem podstawiamy $u = \sqrt{x}$, co prowadzi do klasycznej całki funkcji $(u^2 + 1)^{-1}$.
+% TODO: gdzie jest ta klasyczna całka?
+% SOLUTION
+
+\begin{problem_with_solution}
+    \label{banas_12_21_auxilia}%
+    \begin{equation}
+        \int \sec^3 x \,\mathrm{d}x.
+    \end{equation}
+\end{problem_with_solution}
+
+% SOLUTION
+\textbf{Problem \ref{banas_12_21_auxilia}}.
+Całkujemy najpierw przez części, $f(x) = \sec x$, $g'(x) = \sec^2 x$.
+Pamiętając, że $\tan^2 x = \sec^2 x - 1$, mamy
+\begin{align}
+    I & = \sec x \tan x - \int \sec x \tan^2 x \,\mathrm{d} x \\
+        & = \sec x \tan x - I + \int \sec x \,\mathrm{d}x \\
+    2I & = \sec x \tan x + \log |\tan x + \sec x|.
+\end{align}
+% SOLUTION

@@ -1,0 +1,179 @@
+%
+
+\section{Sztuczka Feynmana: różniczkowanie pod znakiem całki}
+% SOLUTION
+\section{Sztuczka Feynmana: różniczkowanie pod znakiem całki}
+% SOLUTION
+
+% https://math.stackexchange.com/questions/942263/really-advanced-techniques-of-integration-definite-or-indefinite
+\begin{problem}
+    \begin{equation}
+        \int_0^\infty \frac{\sin x}{x} \,\mathrm{d}x = \frac \pi 2.
+    \end{equation}
+\end{problem}
+
+% TODO: przepisać całkę z s. 82, Nahin
+
+\begin{problem_with_solution}
+    \label{nahin_holzweg}%
+    Niech $a, b > 0$, wtedy
+    \begin{equation}
+        \int_{-\infty}^\infty \frac{\cos ax}{b^2 - x^4} \,\mathrm{d} x = \frac{\pi}{b} \sin (ab).
+    \end{equation}
+\end{problem_with_solution}
+
+% SOLUTION
+\textbf{Problem \ref{nahin_holzweg}} -- \cite[s. 115, 375, 376]{nahin15}.
+% SOLUTION
+
+\begin{problem}
+    \label{nahin_datenautobahn}%
+    Niech $a > b$, wtedy
+    \begin{equation}
+        \int_{-\infty}^\infty \frac{\cos ax}{b^4 - x^4} \,\mathrm{d} x = \frac{\pi}{2b^3} [\sin (ab) + \exp (-ab)].
+    \end{equation}
+\end{problem}
+
+% SOLUTION
+\textbf{Problem \ref{nahin_datenautobahn}} -- \cite[s. 115, 376]{nahin15}.
+% SOLUTION
+
+% Nahin Inside interesting... page 83
+\begin{problem}
+    \begin{equation}
+        \int_0^\infty \frac{\sin ax}{x e^{xy}} \,\mathrm{d}x = \pm \frac \pi 2 - \arctan \frac y a.
+    \end{equation}
+\end{problem}
+
+\begin{problem}
+    Niech $a > 0$, wtedy
+    \begin{equation}
+        \int_0^\infty \frac{\sin ax}{x} \,\mathrm{d}x = \frac \pi 2.
+    \end{equation}
+\end{problem}
+% SKAD TO
+
+
+\begin{problem}[całka Frullaniego]
+\index{całka Frullaniego}%
+    Niech $f \colon [0, \infty) \to \R$ będzie funkcją ciągle różniczkowalną, której granica w nieskończoności istnieje.
+    Wtedy dla ustalonych liczb rzeczywistych $a, b > 0$ mamy
+    \begin{equation}
+        \int_0^\infty \frac{f(ax) - f(bx)}{x} \,\mathrm{d} x = \left[\lim_{x \to \infty} f(x) - f(0) \right] \cdot \log \frac a b.
+    \end{equation}
+\end{problem}
+
+Okazuje się, że problem rozwiązał Cauchy (około 1823 roku), ale też Giuliano Frullani\footnote{Włoski matematyk.} (zapowiedź w 1821 roku, publikacja około 1829 roku).
+\index[persons]{Frullani, Giuliano}%
+Nahin \cite[s. 85]{nahin15} używa tej nazwy do konkretnego wcielenia całki Frullaniego, dla $f = \arctan$.
+Boros, Moll \cite[s. 98]{boros04} piszą mgliście \emph{,,under some mild conditions on the function $f$''}...
+
+% Nahin Inside interesting... page 8x
+\begin{problem}
+    Niech $a, b > 0$.
+    Wtedy
+    \begin{equation}
+        \int_0^\infty \frac{e^{-ax} - e^{-bx}}{x} \,\mathrm{d}x = \log \frac b a.
+    \end{equation}
+\end{problem}
+
+% Nahin Inside interesting... page 89
+\begin{problem}
+    \begin{equation}
+        \int_0^\infty \frac{\cos (ax) - \cos (bx)}{x^2} \,\mathrm{d}x = \frac \pi 2 (b - a).
+    \end{equation}
+\end{problem}
+
+% Nahin Inside interesting... page 89
+\begin{problem}
+    \begin{equation}
+        \int_0^\infty \frac{\cos (ax) - \cos (bx)}{x} \,\mathrm{d}x = \log \frac b a.
+    \end{equation}
+\end{problem}
+
+% Nahin Inside interesting... page 89
+\begin{problem}
+    \label{nahin_kriegsrecht}
+    \begin{equation}
+        \int_0^\infty \frac{\log (a^2 x^2 + 1)}{x^2 + b^2} \,\mathrm{d}x = \frac \pi b \log (1 + ab).
+    \end{equation}
+\end{problem}
+
+% SOLUTION
+\textbf{Problem \ref{nahin_kriegsrecht}} -- \cite[s. 67]{nahin15} w szczególnym przypadku $a = b = 1$; \cite[s. 114, 375]{nahin15} w ogólności.
+% SOLUTION
+
+% Nahin Inside interesting... page 91
+\begin{problem}
+    Niech $a \ge 0$, wtedy
+    \begin{equation}
+        \int_0^1 \frac{x^a - 1}{\log x} \,\mathrm{d}x = \log(1+a).
+    \end{equation}
+\end{problem}
+
+% Nahin Inside interesting... page 92
+\begin{problem}
+    Niech $a \ge 0$, wtedy
+    \begin{equation}
+        \int_0^1 \frac{x^a - x^b}{\log x} \,\mathrm{d}x = \log \frac{1+a}{1+b}.
+    \end{equation}
+\end{problem}
+
+% Nahin Inside interesting... page 96
+\begin{problem}
+    Niech $a > b$, wtedy
+    \begin{equation}
+        \int_0^\pi \frac{\mathrm{d}x} {a + b \cos x} = \frac{\pi}{\sqrt{a^2 - b^2}}.
+    \end{equation}
+\end{problem}
+
+\begin{problem}
+    \label{nahin_dini}%
+    Niech $a \ge 0$ będzie dowolną liczbą rzeczywistą.
+    Wtedy
+    \begin{equation}
+        \int_0^\pi \log (1 - 2 a \cos x + a^2) \,\mathrm{d} x = \begin{cases}
+            0, & \text{gdy } a^2 \le 1, \\
+            2 \pi \log a & \textrm{w przeciwnym razie}.
+        \end{cases}
+    \end{equation}
+\end{problem}
+
+Nahin pisze, że powyższą całkę wyznaczył jako pierwszy Ulisse Dini\footnote{Włoski matematyk.} w 1878 roku i że (całka, nie Dini) ma ważne zastosowania w fizyce i inżynierii.
+\index[persons]{Dini, Ulisse}%
+
+% SOLUTION
+\textbf{Problem \ref{nahin_dini}} -- \cite[s. 109-112]{nahin15}
+% SOLUTION
+
+% https://math.stackexchange.com/questions/580521/generalizing-int-01-frac-arctan-sqrtx2-2-sqrtx2-2
+\begin{problem_with_solution}[całka Ahmeda]
+    \label{ahmed_integral}%
+    \begin{equation}
+        \int_0^1 \frac{\arctan \sqrt{x^2+2}}{(x^2+1) \sqrt{x^2+2}} \,\mathrm{d}x = \frac{5\pi^2}{96}.
+    \end{equation}
+\end{problem_with_solution}
+
+% SOLUTION
+\textbf{Problem \ref{ahmed_integral}} -- patrz praca Ahmeda Zafara \cite{ahmed02}.
+\index[persons]{Zafar, Ahmed}
+Rozwiązanie podaje też Nahin \cite[s. 190-194]{nahin15}.
+% SOLUTION
+
+\begin{problem_with_solution}[całka Coxetera]
+    \label{coxeter_integral}%
+    \begin{equation}
+        \int_0^{\pi/2} \arccos \frac{\cos x}{1 + 2\cos x}  \,\mathrm{d}x = \frac{5\pi^2}{24}.
+    \end{equation}
+\end{problem_with_solution}
+
+Młody Harold Coxeter zamieścił tę całkę w liście do Mathematical Gazette, rozwiązanie zostało nadesłane przez Hardy'ego.
+
+% SOLUTION
+\textbf{Problem \ref{coxeter_integral}} -- Nahin \cite[s. 190-201]{nahin15}; to prawdopodobnie najdłuższe rozwiązanie w całej jego książce.
+% SOLUTION
+
+
+
+
+%
