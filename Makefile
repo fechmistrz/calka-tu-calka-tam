@@ -30,6 +30,8 @@ src/integrals.pdf: $(ALL_DEPENDENCIES)
 src/sections/integrals/hard_stackexchange.tex: src/sections/integrals/math-stack-exchange/*.tex
 	cat $$(find src/sections/integrals/math-stack-exchange/ -type f | sort -V) > src/sections/integrals/hard_stackexchange.tex
 
+src/sections/integrals/hard_valean.tex: src/sections/integrals/valean/*.tex
+	cat src/sections/integrals/valean/*.tex > src/sections/integrals/hard_valean.tex
 	
 define keep_solution
 	mkdir -pv src/sections/makefile-solutions/
