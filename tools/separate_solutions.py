@@ -6,14 +6,13 @@ from pathlib import Path
 SOLUTION_MARKER = "% SOLUTION"
 
 def process_file(file_path: Path, hide_solutions: bool) -> None:
-    printing = True
+    printing = hide_solutions
 
     with file_path.open('r', encoding='utf-8') as file:
         for line in file:
             if SOLUTION_MARKER in line:
                 printing = not printing
-                print()  # Insert a blank line on marker
-            elif printing or not hide_solutions:
+            elif printing:
                 print(line, end='')
 
 def parse_args():
