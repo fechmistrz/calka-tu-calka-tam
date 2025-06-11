@@ -1,0 +1,17 @@
+# LaTeX output files
+*.pdf
+
+# LaTeX temporary files
+*.aux
+*.log
+*.out
+*.toc
+*.bbl
+*.blg
+*.ilg
+*.ind
+
+# Makefile artifacts
+src/sections/makefile-*/*.tex
+src/sections/integrals/hard_stackexchange.tex
+src/sections/integrals/hard_valean.tex
