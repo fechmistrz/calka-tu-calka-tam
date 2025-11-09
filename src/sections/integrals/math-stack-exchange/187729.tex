@@ -10,6 +10,7 @@
 
 Całki Fresnela mają praktyczne zastosowanie, historycznie pierwszym było obliczenie natężenia pola elektromagnetycznego w środowisku, gdzie światło ugina się wokół nieprzezroczystych obiektów.
 \index{całka Fresnela}%
+Znalazł je Euler w 1781 roku, zanim Fresnel się w ogóle urodził!
 
 % SOLUTION
 \textbf{Problem \ref{stack_187729}} -- znajdziemy ogólniejszą całkę $I_\lambda$ funkcji $\sin(x^2) e^{-\lambda x^2}$ nad zbiorem $[0, \infty)$.
@@ -23,8 +24,9 @@ Całki Fresnela mają praktyczne zastosowanie, historycznie pierwszym było obli
     & = \frac12 \int_0^{\pi/4} \frac{ \lambda\,\mathrm{d}\phi}{\cos^2(2\phi)+ \lambda^2} - \frac{ \lambda\pi/8}{1+ \lambda^2} \\
     & = \frac14 \int_0^{\pi/4} \frac{ \lambda\,\mathrm{d} \tan(2\phi)} {1+ \lambda^2+ \lambda^2 \tan^2(2\phi)} - \frac{ \lambda\pi/8}{1+ \lambda^2} \\
     & = \frac14 \int_0^\infty \frac1{1+ \lambda^2+t^2}\,\mathrm{d}t - \frac{ \lambda\pi/8}{1+ \lambda^2} \\
-    & = \frac{\pi/8}{\sqrt{1+ \lambda^2}} - \frac{ \lambda\pi/8}{1+ \lambda^2}
+    & = \frac{\pi/8}{\sqrt{1+ \lambda^2}} - \frac{ \lambda\pi/8}{1+ \lambda^2}.
 \end{align}
+Inny rachunek, z tożsamością Eulera, podaje Nahin \cite[s. 227-229]{nahin15}.
 % SOLUTION
 
 %
