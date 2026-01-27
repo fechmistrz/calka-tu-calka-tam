@@ -1,7 +1,7 @@
 all: integrals.pdf
 
 INTEGRALS = by_substitution by_parts gamma_beta \
-	rational rational-pi trig feynman_trick \
+	rational rational-pi trig feynman_trick complex \
 	bee_mit various theoretic \
 	hard_valean hard_stackexchange hard
 

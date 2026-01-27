@@ -86,12 +86,19 @@
 \input{sections/derivatives}
 
 \chapter{Całki}
+\section{Całkowanie przez zgadnięcie pochodnej}
 \input{sections/by_derivatives}
+
 \input{sections/makefile-problems/by_substitution}
+
 \input{sections/makefile-problems/by_parts}
+
 \input{sections/makefile-problems/rational}
+
 \input{sections/makefile-problems/rational-pi}
+
 \input{sections/makefile-problems/trig}
+
 \input{sections/makefile-problems/various}
 
 \textbf{Ramanujan's Master Theorem}: jeśli funkcja $F$ rozwija się w szereg Taylora, to momenty $F$ dane są wzorem... Boros, Moll, ps. 151.
@@ -99,20 +106,23 @@
 \input{sections/differential_binomial}
 % \section{Całkowanie funkcji trygonometrycznych}
 % Całkowanie funkcji trygonometrycznych
-	\input{sections/makefile-problems/feynman_trick}
+\input{sections/makefile-problems/feynman_trick}
 
 \section{Funkcje Gamma oraz Beta}
-	\input{sections/makefile-problems/gamma_beta}
+\input{sections/makefile-problems/gamma_beta}
+
+\section{Całkowanie konturowe itd.}
+\input{sections/makefile-problems/complex}
 
 \section{Zadania z turniejów całkowania}
-	\input{sections/makefile-problems/bee_mit}
+\input{sections/makefile-problems/bee_mit}
 
 \input{sections/makefile-problems/theoretic}
 
 \section{Trudne całki}
-	\input{sections/makefile-problems/hard}
-	\input{sections/makefile-problems/hard_valean}
-	\input{sections/makefile-problems/hard_stackexchange}
+\input{sections/makefile-problems/hard}
+\input{sections/makefile-problems/hard_valean}
+\input{sections/makefile-problems/hard_stackexchange}
 
 \chapter{Rozwiązania}
 % \input{sections/by_derivatives}
@@ -126,33 +136,18 @@
 % Całkowanie funkcji trygonometrycznych
 \input{sections/makefile-solutions/feynman_trick}
 
+\section{Funkcje Gamma oraz Beta}
+\input{sections/makefile-solutions/gamma_beta}
+
 \section{Zadania z turniejów całkowania}
-	\input{sections/makefile-solutions/bee_mit}
+\input{sections/makefile-solutions/bee_mit}
 
 \input{sections/makefile-solutions/theoretic}
 
 \section{Trudne całki}
-	\input{sections/makefile-solutions/hard}
-	\input{sections/makefile-solutions/hard_valean}
-	\input{sections/makefile-solutions/hard_stackexchange}
-
-\begin{problem_with_solution}
-\label{nahin_page_225}%
-    \begin{equation}
-		\int_1^\infty \frac{\mathrm{d}x}{x^3 + x} = \log \sqrt {2}.
-    \end{equation}
-\end{problem_with_solution}
-
-% SOLUTION
-\textbf{Problem \ref{nahin_page_225}}.
-Rozkładamy całkowaną funkcję na sumę
-\begin{equation}
-	\frac 1 x - \frac{1}{2(x - i)} - \frac{1}{2(x+i)}
-\end{equation}
-tak jak Nahin \cite[s. 225]{nahin15}.
-% SOLUTION
-
-
+\input{sections/makefile-solutions/hard}
+\input{sections/makefile-solutions/hard_valean}
+\input{sections/makefile-solutions/hard_stackexchange}
 
 \chapter{Tłumaczenie numeracji}
 \input{sections/banas_wedrychowicz}
@@ -175,7 +170,6 @@ tak jak Nahin \cite[s. 225]{nahin15}.
 
 % TODO: https://math.stackexchange.com/questions/tagged/integration?tab=votes&page=2&pagesize=15
 
-% TODO: https://www.youtube.com/watch?v=p75k1DbuS0o
 % TODO: https://www.youtube.com/watch?v=lXOLcLd4-BA
 % TODO: https://www.youtube.com/watch?v=cp_jmqfrcrc
 % TODO: https://www.youtube.com/watch?v=SQ-CY0kciE0
@@ -208,7 +202,7 @@ tak jak Nahin \cite[s. 225]{nahin15}.
 % TODO: https://www.youtube.com/watch?v=UM13L_4mWfA Cleo
 % TODO: https://www.youtube.com/watch?v=J20crVcWra0 MIT Bee 2023 Finals
 % TODO: https://www.youtube.com/watch?v=Xmro-XuDhOw Feynman
-% TODO: https://www.youtube.com/watch?v=oiQQx3SqYbI
+
 % TODO: https://www.youtube.com/watch?v=QaI38XOsqL0 MIT Bee 2024 Finals
 % TODO: https://www.youtube.com/watch?v=oT20UwCQ-Vg Fresnel
 % TODO: https://www.youtube.com/watch?v=XnvFr2w2gUI Feynman's technique
@@ -237,7 +231,6 @@ tak jak Nahin \cite[s. 225]{nahin15}.
 % https://www.youtube.com/watch?v=AqSvObSUU-Q
 % https://www.youtube.com/watch?v=sUTg7PqlhvY feynman
 % https://www.youtube.com/watch?v=iQW8zkenHkQ feynman?
-% https://www.youtube.com/watch?v=Yf57U4_8SVo raabe log Gamma
 % https://www.youtube.com/watch?v=4pvK0DTPPg8 cos cos + sin sin
 % https://www.youtube.com/watch?v=YJ6j1DXS4AU berkeley
 % https://www.youtube.com/watch?v=xOtQ8Mh0cvg feynman
@@ -248,3 +241,4 @@ tak jak Nahin \cite[s. 225]{nahin15}.
 % https://www.youtube.com/watch?v=gO9eApg8Kfo trygonometryczna
 % https://www.youtube.com/watch?v=IHjGVTeFdFA nested trig
 % https://www.youtube.com/watch?v=Ebn2enuBr60
+
