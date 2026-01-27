@@ -1,0 +1,63 @@
+%
+
+Funkcji $\Gamma$ jest poświęcony dziesiąty rozdział książki Borosa, Molla \cite[s. 186-???]{boros04}.
+
+Współczesna definicja
+\begin{equation}
+    \Gamma(x) := \int_0^\infty \exp(-t) \cdot t^{x-1} \,\mathrm{d}t
+\end{equation}
+pochodzi od Legendre'a (1809), ale Euler preferował równoważne wyrażenie
+\begin{equation}
+    \Gamma(x) := \int_0^1 (- \log t)^{x-1} \,\mathrm{d}t.
+\end{equation}
+
+Funkcja $\Gamma$ spełnia równanie funkcyjne $\Gamma(x + 1) = x \Gamma (x)$ i stanowi uogólnienie silnii, mamy bowiem $\Gamma(k) = (k-1)!$ dla wszystkich dodatnich całkowitych $k$.
+Bohr, Mollerup pokazali w 1922, że jest to jedyna funkcja $f \colon (0, \infty) \to (0, \infty)$ taka, że $f(1) = 1$, $f(x) > 0$ dla $x > 0$, spełnione jest równanie funkcyjne i $\log f$ jest wypukła.
+Wielandt scharakteryzował ją jako jedyną analityczną funkcję, która spełnia równanie funkcyjne i jest ograniczona na pasku $re z \in [1, 2]$.
+
+Mamy
+\begin{equation}
+    \Gamma(z) \Gamma(1-z) = \frac{\pi}{\sin \pi z},
+\end{equation}
+
+zatem $\Gamma (1/2) = \sqrt{\pi}$.
+
+Funkcja beta (Beta?) dana jest wzorem
+\begin{equation}
+    B(x, y) = \int_0^1 t^{x-1} (1-t)^{y-1} \,\mathrm{d}t
+\end{equation}
+i wiąże ją z funkcją Gamma relacja
+\begin{equation}
+    B(x, y) = \frac{\Gamma(x) \Gamma(y)}{\Gamma (x+y)}.
+\end{equation}
+
+Euler pokazał, że 
+\begin{equation}
+    \int_0^1 \log \Gamma (x) \,\mathrm{d}x = \log \sqrt{2 \pi}.
+\end{equation}
+
+\begin{problem_with_solution}
+    \label{boros_moll_10_6_1}%
+    \begin{equation}
+        \int_0^1 \log^2 \Gamma(x) \,\mathrm{d} x = \frac{\gamma^2}{12} + \frac{\pi^2}{48} + \frac 13 \gamma \log \sqrt{2\pi} + \frac 43 \log^2 \sqrt{2\pi} - (\gamma + 2 \log \sqrt{2 \pi}) \frac{\zeta'(2)}{\pi^2} + \frac{\zeta''(2)}{2\pi^2}.
+    \end{equation}
+\end{problem_with_solution}
+
+% SOLUTION
+\textbf{Problem \ref{boros_moll_10_6_1}} -- Boros, Moll \cite[s. 203]{boros04} piszą, że całkę znaleźli Espinosa, Moll (2002).
+% SOLUTION
+
+% definicja funkcji psi jako Gamma'/Gamma
+
+\begin{problem_with_solution}
+    \label{boros_moll_10_12_1}%
+    \begin{equation}
+        \psi(x) = \int_0^\infty \left(\frac{\exp(-t)}{t} - \frac{\exp(-xt)}{1 - \exp(-t)}\right) \,\mathrm{d}t
+    \end{equation}
+\end{problem_with_solution}
+
+% SOLUTION
+\textbf{Problem \ref{boros_moll_10_12_1}} -- Boros, Moll \cite[s. 216]{boros04}.
+% SOLUTION
+
+%

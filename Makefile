@@ -1,6 +1,6 @@
 all: integrals.pdf
 
-INTEGRALS = by_substitution by_parts \
+INTEGRALS = by_substitution by_parts gamma_beta \
 	rational rational-pi trig feynman_trick \
 	bee_mit various theoretic \
 	hard_valean hard_stackexchange hard
