@@ -17,7 +17,7 @@ def process_file(file_path: Path, hide_solutions: bool) -> None:
 
 def parse_args():
     parser = argparse.ArgumentParser(
-        description="Prints a file, optionally hiding sections marked with '% SOLUTION'."
+        description="Prints a file, optionally hiding sections marked with '... SOLUTION'."
     )
     parser.add_argument(
         "--filename",
@@ -27,7 +27,7 @@ def parse_args():
     parser.add_argument(
         "--hide-solutions",
         action="store_true",
-        help="Hide lines between '% SOLUTION' markers."
+        help="Hide lines between '... SOLUTION' markers."
     )
 
     args = parser.parse_args()
