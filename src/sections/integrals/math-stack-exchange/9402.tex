@@ -1,12 +1,31 @@
 %
 
 % https://math.stackexchange.com/q/1653979
-\begin{problem}[pytanie 9402]
+\begin{problem_with_solution}[pytanie 9402]
     \label{stack_9402}%
     % TODO: https://math.stackexchange.com/questions/9402/calculating-the-integral-int-0-infty-frac-cos-x1x2-mathrmdx-with
     \begin{equation}
-        \int_0^\infty \frac {\cos b x}{1+x^2} \,\mathrm{d}x = \frac{\pi} 2 \exp(-b).
+        \int_0^\infty \frac {\cos ax}{x^2 + b^2} \,\mathrm{d}x = \frac{\pi}{2b} \exp(-ab).
     \end{equation}
-\end{problem}
+\end{problem_with_solution}
+
+% SOLUTION
+
+\textbf{Problem \ref{stack_9402}}.
+Wskazówka: rozpatrzeć funkcję
+\begin{equation}
+    F(t) = \int_0^\infty \frac{\sin (xt)}{x(1+x^2)} \,\mathrm{d} x,
+\end{equation}
+która spełnia równanie $F''(t) - F(t) + \pi/2 = 0$, zatem $F(t) = \frac \pi 2 (1 - e^{-t})$.
+Teraz zróżniczkować pod znakiem całki.
+Inne rozwiązanie (dla $b = 1$) zaczyna się od zauważenia, że szukana całka to
+\begin{equation}
+    \int_0^\infty \frac{\cos ax}{x} \left(\frac{x}{1+x^2}\right) \mathrm{d}x = 
+    \int_0^\infty \frac{\cos ax}{x} \left(\int_0^\infty \frac{\sin xt}{e^t} \,\mathrm{d}t \right) \mathrm{d}x,
+\end{equation}
+gdzie wystarczy zmienić kolejność całkowania. % => https://en.wikipedia.org/wiki/Dirichlet_integral, gdzie to jest w tej książce?
+Jeszcze inne rozwiązania korzystają z transformaty Fouriera albo Ramanujan's master theorem.
+
+% SOLUTION
 
 %
