@@ -12,6 +12,7 @@ def process_file(file_path: Path, hide_solutions: bool) -> None:
         for line in file:
             if SOLUTION_MARKER in line:
                 printing = not printing
+                print("")
             elif printing:
                 print(line, end='')
 
