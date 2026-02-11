@@ -1,5 +1,16 @@
 
-Funkcja digamma to pochodna logarytmiczna funkcji Gamma, co tłumaczy nazwę, ale nie symbol:
+\emph{Polilogarytm} (funkcja Jonquière’a) jest zdefiniowany szeregiem
+\begin{equation}
+    \polylog_n(z) = \sum_{k=1}^\infty \frac{z^k}{k^n},
+\end{equation}
+który jest zbieżny dla $|z| < 1$.
+Spełnia rekurencję
+\begin{equation}
+    \polylog_n(z) = \int_0^z \frac{\polylog_{n-1}(t)}{t} \,\mathrm{d}t
+\end{equation}
+z warunkiem brzegowym $\polylog_1 (z) = - \log (1 - z)$.
+
+\emph{Funkcja digamma} to pochodna logarytmiczna funkcji Gamma, co tłumaczy nazwę, ale nie symbol:
 \begin{equation}
     \Psi (z) := \frac{\Gamma'(z)}{\Gamma(z)}.
 \end{equation}
