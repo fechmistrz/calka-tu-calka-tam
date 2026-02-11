@@ -2,21 +2,21 @@
 
 \begin{problem_with_solution}
     \label{valean_1_5}%
-    Niech $s > 0$ będzie liczbą rzeczywistą, zaś $\psi$ oznacza funkcję digamma.
+    Niech $s > 0$ będzie liczbą rzeczywistą.
+    % , zaś $\psi$ oznacza funkcję digamma.
     Wtedy
-    \begin{align}
-        \int_0^1 \frac{x^{s-1}}{x+1} \,\mathrm{d} x & = \psi(s) - \psi\left(\frac s2\right) - \log 2 \\
-        \int_0^\infty e^{-sx} \tanh x \,\mathrm{d} x & = \frac 1 2 \left[\psi\left(\frac{s+2}{4}\right) - \psi \left(\frac s4 \right) - \frac 2 s\right]. 
-    \end{align}
+    \begin{equation}
+        \int_0^1 \frac{x^{s-1}}{x+1} \,\mathrm{d} x = \frac 1 2 \left[\psi \left(\frac{s+1}{2}\right) - \psi \left(\frac s 2 \right) \right].
+    \end{equation}
+    Przy tych samych założeniach
+    \begin{equation}
+        \int_0^\infty \frac{\tanh x}{ \exp (sx)} \,\mathrm{d} x = \frac 1 2 \left[\psi\left(\frac{s+2}{4}\right) - \psi \left(\frac s4 \right) - \frac 2 s\right]. 
+    \end{equation}
 \end{problem_with_solution}
 
-% TODO: digamma - https://www.youtube.com/watch?v=14tOt69l408
-
 % SOLUTION
-
 \textbf{Problem \ref{valean_1_5}}.
 Vălean \cite[s. 3]{nahin15}.
-
 % SOLUTION
 
-%s
+%
